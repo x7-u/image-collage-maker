@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Image Collage Maker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <rect x="1"  y="1"  width="8"  height="8"  rx="2" fill="#4a9eff"/>
+          <rect x="10" y="1"  width="8"  height="8"  rx="2" fill="#7b52f0"/>
+          <rect x="19" y="1"  width="8"  height="8"  rx="2" fill="#4a9eff"/>
+          <rect x="1"  y="10" width="8"  height="8"  rx="2" fill="#7b52f0"/>
+          <rect x="10" y="10" width="8"  height="8"  rx="2" fill="#4a9eff"/>
+          <rect x="19" y="10" width="8"  height="8"  rx="2" fill="#7b52f0"/>
+          <rect x="1"  y="19" width="8"  height="8"  rx="2" fill="#4a9eff"/>
+          <rect x="10" y="19" width="8"  height="8"  rx="2" fill="#7b52f0"/>
+          <rect x="19" y="19" width="8"  height="8"  rx="2" fill="#4a9eff"/>
+        </svg>
+        <span>Collage Maker</span>
+      </div>
+      <div class="header-actions">
+        <span id="imageCount" class="count-badge">0 / 9 images</span>
+        <button id="clearBtn" class="btn-secondary" disabled>Clear All</button>
+        <button id="generateBtn" class="btn-primary" disabled>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M2 4h12M2 8h8M2 12h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <rect x="10" y="7" width="5" height="7" rx="1" fill="currentColor" opacity="0.3"/>
+            <path d="M12 9v3M10.5 11.5l1.5 1.5 1.5-1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Export to Word
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="instructions">
+      Drag &amp; drop images into slots &bull; Drag slots to reorder &bull; Click empty slot to browse
+    </div>
+
+    <div class="grid" id="grid">
+      <!-- Slots built by renderer.js -->
+    </div>
+
+    <div class="layout-hint">
+      <span>Layout:</span>
+      <span id="layoutLabel">—</span>
+    </div>
+  </main>
+
+  <!-- Notification with optional "Open Folder" button -->
+  <div id="notification" class="notification">
+    <span id="notifMsg"></span>
+    <button id="notifFolder" class="notif-folder-btn" style="display:none">
+      <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
+        <path d="M2 4.5A1.5 1.5 0 013.5 3H6l1.5 2H13A1.5 1.5 0 0114.5 6.5v6A1.5 1.5 0 0113 14H3.5A1.5 1.5 0 012 12.5v-8z" stroke="currentColor" stroke-width="1.4" fill="none"/>
+      </svg>
+      Open Folder
+    </button>
+  </div>
+
+  <!-- Drop overlay for whole-window drops -->
+  <div id="dropOverlay" class="drop-overlay">
+    <div class="drop-overlay-inner">
+      <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+        <path d="M32 8v32M20 28l12-20 12 20" stroke="#4a9eff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 44v8h40v-8" stroke="#4a9eff" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <p>Drop images anywhere</p>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

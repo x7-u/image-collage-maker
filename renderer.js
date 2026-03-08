@@ -248,6 +248,12 @@ function updateUI() {
   generateBtn.disabled   = count === 0;
   clearBtn.disabled      = count === 0;
 
+  if (count === 4) {
+    grid.classList.add('four-up');
+  } else {
+    grid.classList.remove('four-up');
+  }
+
   if (count === 0) {
     layoutLabel.textContent = '—';
   } else {

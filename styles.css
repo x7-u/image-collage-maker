@@ -136,6 +136,15 @@ main {
   flex-shrink: 0;
 }
 
+/* 4-image mode: show a 2×2 grid, hide empty slots */
+.grid.four-up {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.grid.four-up .slot:not(.filled) {
+  display: none;
+}
+
 /* ── Slot ─────────────────────────────────────────────────────────────────── */
 .slot {
   position: relative;

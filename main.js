@@ -99,7 +99,7 @@ ipcMain.handle('generate-docx', async (event, slots) => {
     const CONT_H = PAGE_H - 2 * MARGIN;
 
     const cellWTwp = Math.floor(CONT_W / cols);
-    const cellHTwp = Math.floor(CONT_H / rows);
+    const cellHTwp = Math.floor((CONT_H - 2) / rows);
 
     // docx ImageRun.transformation expects PIXELS (it multiplies by 9525 internally to get EMU).
     // 1 twip = 1/1440 inch; at 96 DPI → 1 twip = 96/1440 = 1/15 px
